@@ -1,5 +1,5 @@
 
-import inicial from "./pages/inicial/index.js";
+import inicial from "./pages/login/index.js";
 import cadastro from "./pages/cadastro/index.js";
 import feed from "./pages/feed/index.js";
 import post from "./pages/post/index.js";
