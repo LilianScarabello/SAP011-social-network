@@ -17,9 +17,11 @@ export default () => {
 
   const submitBtn = container.querySelector("#submitbtn");
 
-  submitBtn.addEventListener("click", () => {
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault()
     const email = container.querySelector("#email").value;
-    const password = container.querySelector("#pwd").value;;
+    const password = container.querySelector("#pwd").value;
+    console.log(email,password)
 
     login(email, password)
       .then( () => {

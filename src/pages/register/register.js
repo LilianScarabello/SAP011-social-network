@@ -10,9 +10,7 @@ export default () => {
         <label for="email">E-mail:</label>
         <input id="email" type="text" placeholder="Digite seu email" autofocus="true" />
         <label for="pwd">Senha:</label>
-        <input id="pwd" type="password" placeholder="Digite uma senha" />  
-        <label for="pwd">Confirmar senha:</label>
-        <input id="pwdConf" type="password" placeholder="Confirme a senha" />  
+        <input id="pwd" type="password" placeholder="Digite uma senha" />    
         <input id="submitbtn" type="submit" value="Cadastrar" class"btn" /> 
       </form>
     `;
@@ -20,9 +18,11 @@ export default () => {
   container.innerHTML = template;
 
   const submitBtn = container.querySelector("#submitbtn");
-  submitBtn.addEventListener("click", () => {
+  submitBtn.addEventListener("click", (e) => { 
+    e.preventDefault()
     const email = container.querySelector("#email").value;
-    const password = container.querySelector("#pwd").value;;
+    const password = container.querySelector("#pwd").value;
+    console.log(email,password)
 
     cadastrar (email, password)
     .then( () => {
