@@ -1,0 +1,53 @@
+section {
+  margin-top: 10px;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.containerLogin{
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  justify-content: space-around;
+}
+
+label {
+  color: #7a4e3f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo {
+  position: relative;
+  max-width: 200px;
+}
+
+.inputLogin {
+  background-color: rgb(162, 181, 218);
+  border: 0cap;
+  border-radius: 12px;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+/* #pwd {
+  background-color: rgb(162, 181, 218);
+  border: 0cap;
+  border-radius: 12px;
+  height: 30px;
+  margin-bottom: 16px;
+} */
+#submitbtn {
+  background-color: rgb(115, 147, 209);
+  border-radius: 12px;
+  height: 25px;
+  margin: 10px;
+}
+#registerBtn {
+  background-color: rgb(115, 147, 209);
+  border-radius: 12px;
+  height: 25px;
+  display: flex; 
+  
+}

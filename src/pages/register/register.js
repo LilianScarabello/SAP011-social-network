@@ -1,7 +1,8 @@
-import { cadastrar } from "../../firebase/firebaseAuth.js"
+import { cadastrar } from '../../firebase/firebaseAuth.js';
+import './register.css';
 
 export default () => {
-  const container = document.createElement("section");
+  const container = document.createElement('section');
 
   const template = `
       <form> 
@@ -17,22 +18,21 @@ export default () => {
 
   container.innerHTML = template;
 
-  const submitBtn = container.querySelector("#submitbtn");
-  submitBtn.addEventListener("click", (e) => { 
-    e.preventDefault()
-    const email = container.querySelector("#email").value;
-    const password = container.querySelector("#pwd").value;
-    console.log(email,password)
+  const submitBtn = container.querySelector('#submitbtn');
+  submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = container.querySelector('#email').value;
+    const password = container.querySelector('#pwd').value;
+    console.log(email, password);
 
-    cadastrar (email, password)
-    .then( () => {
-      window.location.hash = '#feed';
-    })
-    .catch( () => {
-       alert("erro ao cadastrar o usuario");
-    })
-  })
+    cadastrar(email, password)
+      .then(() => {
+        window.location.hash = '#feed';
+      })
+      .catch(() => {
+        alert('erro ao cadastrar o usuario');
+      });
+  });
 
   return container;
-
-}
+};

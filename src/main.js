@@ -1,34 +1,35 @@
+import inicial from './pages/login/login.js';
+import cadastro from './pages/register/register.js';
+import feed from './pages/feed/feed.js';
+import post from './pages/post/post.js';
 
-import inicial from "./pages/login/index.js";
-import cadastro from "./pages/cadastro/index.js";
-import feed from "./pages/feed/index.js";
-import post from "./pages/post/index.js";
+const main = document.querySelector('#root');
 
-const main = document.querySelector("#root");
-
-const init = () => {
-  window.addEventListener("hashchange", () => {
-    main.innerHTML = "";
-    switch (window.location.hash) {
-      case " ":
-        main.appendChild(home());
-        break;
-      case "#cadastro":
-        main.appendChild(cadastro());
-        break;
-      case "#feed":
-        main.appendChild(feed());
-        break;
-      case "#post":
-        main.appendChild(post());
-        break;
-      default:
-        main.appendChild(home());
-    }
-  });
+function verificaHash() {
+  main.innerHTML = '';
+  switch (window.location.hash) {
+    case ' ':
+      main.appendChild(inicial());
+      break;
+    case '#cadastro':
+      main.appendChild(cadastro());
+      break;
+    case '#feed':
+      main.appendChild(feed());
+      break;
+    case '#post':
+      main.appendChild(post());
+      break;
+    default:
+      main.appendChild(inicial());
+  }
 }
-
-window.addEventListener("load", () => {
-  main.appendChild(inicial());
+const init = () => {
+  window.addEventListener('hashchange', () => {
+    verificaHash();
+  });
+};
+window.addEventListener('load', () => {
+  verificaHash();
   init();
 });

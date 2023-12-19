@@ -1,23 +1,40 @@
+import {
+  collection, query, onSnapshot, orderBy, doc, updateDoc, addDoc, deleteDoc,
+} from 'firebase/firestore';
 import { db } from './firebaseConfig.js';
-import { collection, query, where, onSnapshot } from "firebase/firestore";
 
-export function readPosts() {
-  const q = query(collection(db, "posts"));
+export function readPosts(exibirPosts) {
+  const q = query(collection(db, 'posts'), orderBy('date', 'asc'));
 
-  const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  onSnapshot(q, (querySnapshot) => {
     const posts = [];
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach((document) => {
       const obj = {
-        text: doc.data().text,
-        date: doc.data().date
-      }
+        textDoPost: document.data().text,
+        datePost: document.data().date,
+        id: document.id,
+      };
       posts.push(obj);
     });
-    console.log("Posts: ", posts.join(", "));
+
+    exibirPosts(posts);
   });
 }
 
+export function atualizarPost(postId, newtext) {
+  const postRef = doc(db, 'posts', postId);
+  return updateDoc(postRef, {
+    text: newtext,
+  });
+}
 
-export function gravarPost(){
+export function gravarPost(textDoPost) {
+  addDoc(collection(db, 'posts'), {
+    text: textDoPost,
+    date: new Date(),
+  });
+}
 
+export function deletePost(id) {
+  deleteDoc(doc(db, 'posts', id));
 }

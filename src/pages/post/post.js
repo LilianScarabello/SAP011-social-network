@@ -1,5 +1,5 @@
 export default () => {
-  const container = document.createElement("section");
+  const container = document.createElement('section');
 
   const template = `
       
@@ -8,5 +8,4 @@ export default () => {
   container.innerHTML = template;
 
   return container;
-
-}
+};
