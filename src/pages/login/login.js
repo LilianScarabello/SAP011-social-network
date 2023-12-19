@@ -14,7 +14,7 @@ export default () => {
       <label for="pwd">Senha:</label>
       <input id="pwd" class="inputLogin" type="password" placeholder=" Digite sua senha" />
       <input id="submitbtn" type="submit" value="Entrar" class"btn" />
-      <p>Não tem um cadastro?<br>Clique no botão abaixo e cadastre-se</p>
+      <p id="beforeRegister">Não tem um cadastro?<br>Clique no botão abaixo e cadastre-se</p>
       <button id="registerBtn">Cadastrar</button> 
     </div>
     </form>

@@ -14,6 +14,8 @@ export default () => {
         <input id="pwd" type="password" placeholder="Digite uma senha" />    
         <input id="submitbtn" type="submit" value="Cadastrar" class"btn" /> 
       </form>
+
+      <button id="backBtn">Voltar</button>
     `;
 
   container.innerHTML = template;

@@ -1,14 +1,16 @@
 section {
-  margin-top: 10px;
+  margin: 100px;
 }
-form {
+
+.boxOne {
   display: flex;
   flex-wrap: wrap;
 }
-.containerLogin{
+
+.containerLogin {
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
+  padding-left: 45px;
   justify-content: space-around;
 }
 
@@ -20,7 +22,7 @@ label {
 
 .logo {
   position: relative;
-  max-width: 200px;
+  max-width: 300px;
 }
 
 .inputLogin {
@@ -29,25 +31,47 @@ label {
   border-radius: 12px;
   height: 30px;
   margin-bottom: 16px;
+  font-weight: bold;
 }
 
-/* #pwd {
-  background-color: rgb(162, 181, 218);
-  border: 0cap;
-  border-radius: 12px;
-  height: 30px;
-  margin-bottom: 16px;
-} */
 #submitbtn {
   background-color: rgb(115, 147, 209);
   border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(48, 24, 16);
   height: 25px;
   margin: 10px;
+  border: 0cap;
 }
+
 #registerBtn {
   background-color: rgb(115, 147, 209);
   border-radius: 12px;
-  height: 25px;
-  display: flex; 
-  
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(48, 24, 16);
+  height: 30px;
+  margin: 10px;
+  border: 0cap;
+}
+
+#registerBtn:hover {
+  background-color: rgb(252, 188, 248);
+}
+
+#submitbtn:hover {
+  background-color: rgb(252, 188, 248);
+}
+
+.footerLinks {
+  position: relative;
+  max-width: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.beforeRegister {
+  font-size: px;
+  color: rgb(48, 24, 16);
 }
